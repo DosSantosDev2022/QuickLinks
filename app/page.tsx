@@ -1,16 +1,16 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from 'next/image'
+import Link from 'next/link'
 import {
   AiFillInstagram,
   AiFillYoutube,
   AiOutlineWhatsApp,
   AiFillLinkedin,
-} from 'react-icons/ai';
-import { FaTelegram } from 'react-icons/fa';
-import { BsFillArrowUpRightCircleFill } from 'react-icons/bs';
+} from 'react-icons/ai'
+import { FaTelegram } from 'react-icons/fa'
+import { BsFillArrowUpRightCircleFill } from 'react-icons/bs'
 
 export default function Home() {
-  const bg = '/bg-cover.jpg';
+  const bg = '/bg-cover.jpg'
   const socialLinks = [
     {
       name: 'Instagram',
@@ -37,7 +37,7 @@ export default function Home() {
       Url: '/',
       icon: <AiFillLinkedin size={20} />,
     },
-  ];
+  ]
   const QuickLinks = [
     {
       nome: 'Meu Portifólio',
@@ -59,7 +59,7 @@ export default function Home() {
       Url: '/',
       icon: '',
     },
-  ];
+  ]
   return (
     <>
       <div className="w-full py-[40px] h-screen flex itens-center justify-center bg-zinc-50 ">
@@ -90,6 +90,7 @@ export default function Home() {
             <div className="flex itens-center justify-center gap-2 mt-2">
               {socialLinks.map((link) => (
                 <Link
+                  key={link.name}
                   className="hover:bg-zinc-200 p-1 rounded-full duration-500 transition-all"
                   href={link.Url}
                 >
@@ -101,7 +102,8 @@ export default function Home() {
           <div className="w-full flex flex-col items-center justify-center gap-4 p-2">
             {QuickLinks.map((link) => (
               <Link
-                className="w-[236px] text-[10px] bg-zinc-900 text-zinc-50 p-2 rounded-lg flex justify-between items-center hover:scale-105 duration-500 transition-all"
+                key={link.nome}
+                className="w-[236px] text-[10px] bg-zinc-900 text-zinc-50 p-2 rounded-lg flex justify-between items-center hover:scale-105 duration-500 transition-al "
                 href={link.Url}
               >
                 {link.nome}
@@ -112,5 +114,5 @@ export default function Home() {
         </div>
       </div>
     </>
-  );
+  )
 }
